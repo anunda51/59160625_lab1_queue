@@ -23,6 +23,9 @@ class Queue {
     this.data[this.tail] = x;
     this.size++;
     this.tail++;
+    if(this.tail == this.max){  
+      this.tail = 0;
+    }
     return true;
   }
 // output:  ถ้า list มีข้อมูลจะ return ข้อมูล , ถ้า list ว่างจะ return null
@@ -32,10 +35,9 @@ class Queue {
     }
     const x = this.data[this.head];
     this.size--;
-    this.head++;
-    this.tail--;                  // จุดที่ 1
+    this.head++;              
     if(this.head == this.max) {
-      this.head = 0;              // จุดที่ 2
+      this.head = 0;              
     }
     return x;
   }

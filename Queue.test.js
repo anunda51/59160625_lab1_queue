@@ -36,20 +36,8 @@ test('สร้าง queue size 1 และ dequeue เลย จะต้อ�
     const queue = new Queue(1);
     expect(queue.dequeue()).toBe(null);
 });
-// test('Bug ไม่สามารถเพิ่มค่าว่างได้',()=>{
-//     const queue = new Queue(1);
-//     expect(queue.enqueue()).toBe(false);
-// });
-// 7. Bug จุดที่ 1 
-test('Bug 1',()=>{
-    const queue = new Queue(2);
-    expect(queue.enqueue(1)).toBe(true);
-    expect(queue.enqueue(2)).toBe(true);
-    expect(queue.dequeue()).toBe(1);
-    expect(queue.tail).toBe(1);
-});
 
-// 8. Bug จุดที่ 2
+// 7. Bug จุดที่ 1
 test('Bug 2',()=>{
     const queue = new Queue(2);
     expect(queue.enqueue(1)).toBe(true);
@@ -57,4 +45,12 @@ test('Bug 2',()=>{
     expect(queue.dequeue()).toBe(1);
     expect(queue.dequeue()).toBe(2);
     expect(queue.head).toBe(0);
+});
+
+// 8. Bug จุดที่ 2
+test('Bug 2',()=>{
+    const queue = new Queue(2);
+    expect(queue.enqueue(1)).toBe(true);
+    expect(queue.enqueue(2)).toBe(true);
+    expect(queue.tail).toBe(0);
 });
